@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letterString = sender.titleLabel!.text!
+        //I meet the problem about sender.title(for: .normal)! code from Swift textbook, then I google how to fix it and find the solution → sender.titleLabel!.text! indicated from https://developer.apple.com/forums/thread/692151 (devloper.apple.com, this solution helped by one user named willgucsb)
         let letter = Character(letterString.lowercased())
         currentGame.playerGuessed(letter: letter)
         updateGameStore()
